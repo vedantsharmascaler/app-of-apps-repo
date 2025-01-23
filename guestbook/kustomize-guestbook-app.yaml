@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/deepaks374/argocd-example-apps  # Replace with your GitHub account if needed
     path: kustomize-guestbook                                  # Path within the repository
-    targetRevision: main                                       # Replace "main" with the appropriate branch or tag
+    targetRevision: master                                       # Replace "main" with the appropriate branch or tag
   destination:
     server: https://kubernetes.default.svc                     # In-cluster Kubernetes API server
     namespace: kustomize-guestbook                             # Target namespace
