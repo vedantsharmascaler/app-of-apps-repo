@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sock-shop
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/deepaks374/argocd-example-apps  # Replace with your actual GitHub account/repo
+    path: sock-shop                                          # Path to the directory in the repo containing your app
+    targetRevision: main                                     # Replace "main" with the appropriate branch/tag instead of "HEAD"
+  destination:
+    server: https://kubernetes.default.svc                   # In-cluster Kubernetes API server
+    namespace: sock-shop                                     # Target namespace
+  syncPolicy:
+    automated:
+      prune: true                                            # Prune resources that are no longer defined in the repository
+      selfHeal: true                                         # Automatically sync resources when they drift
+    syncOptions:
+      - CreateNamespace=true                                 # Create the namespace if it doesn't already exist
+

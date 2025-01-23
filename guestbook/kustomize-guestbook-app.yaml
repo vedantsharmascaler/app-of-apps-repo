@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustomize-guestbook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/deepaks374/argocd-example-apps  # Replace with your GitHub account if needed
+    path: kustomize-guestbook                                  # Path within the repository
+    targetRevision: main                                       # Replace "main" with the appropriate branch or tag
+  destination:
+    server: https://kubernetes.default.svc                     # In-cluster Kubernetes API server
+    namespace: kustomize-guestbook                             # Target namespace
+  syncPolicy:
+    automated:
+      prune: true                                              # Prune resources not in the source
+      selfHeal: true                                           # Automatically fix drift
+    syncOptions:
+      - CreateNamespace=true                                   # Automatically create the namespace if it doesn't exist
+
