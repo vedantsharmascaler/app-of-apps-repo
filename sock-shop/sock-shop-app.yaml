@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/deepaks374/argocd-example-apps  # Replace with your actual GitHub account/repo
     path: sock-shop                                          # Path to the directory in the repo containing your app
-    targetRevision: master                                     # Replace "main" with the appropriate branch/tag instead of "HEAD"
+    targetRevision: hook-sync-demo                                     # Replace "main" with the appropriate branch/tag instead of "HEAD"
   destination:
     server: https://kubernetes.default.svc                   # In-cluster Kubernetes API server
     namespace: sock-shop                                     # Target namespace
