@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kustomize-guestbook
+  name: helm-guestbook
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/vedantsharmascaler/argocd-example-apps  # Replace with your GitHub account if needed
-    path: kustomize-guestbook                                  # Path within the repository
+    path: helm-guestbook                                  # Path within the repository
     targetRevision: master                                       # Replace "main" with the appropriate branch or tag
   destination:
     server: https://kubernetes.default.svc                     # In-cluster Kubernetes API server
-    namespace: kustomize-guestbook                             # Target namespace
+    namespace: helm-guestbook                             # Target namespace
   syncPolicy:
     automated:
       prune: true                                              # Prune resources not in the source
