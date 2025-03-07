@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/deepaks374/app-of-apps-repo  # Replace with your actual GitHub account/repo URL
+    repoURL: https://github.com/vedantsharmascaler/app-of-apps-repo  # Replace with your actual GitHub account/repo URL
     path: .                                                  # Ensure this is the correct path to the directory with your apps
     targetRevision: main                                     # Replace "main" with the correct branch or tag instead of "HEAD"
     directory:
