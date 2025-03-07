@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/deepaks374/argocd-example-apps  # Replace with your GitHub account if needed
+    repoURL: https://github.com/vedantsharmascaler/argocd-example-apps  # Replace with your GitHub account if needed
     path: kustomize-guestbook                                  # Path within the repository
     targetRevision: master                                       # Replace "main" with the appropriate branch or tag
   destination:
